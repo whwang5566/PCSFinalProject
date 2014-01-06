@@ -27,8 +27,21 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/boyoButton"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="66dp"
         android:ems="10"
-        android:inputType="phone" />
+        android:inputType="phone" >
+
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/findNameEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/boyoButton"
+        android:layout_alignLeft="@+id/phoneEditText"
+        android:layout_marginBottom="20dp"
+        android:ems="10"
+        android:inputType="textPersonName" />
 
 </RelativeLayout>
