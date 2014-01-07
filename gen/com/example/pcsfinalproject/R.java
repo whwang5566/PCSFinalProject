@@ -24,13 +24,19 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int action_settings=0x7f080003;
-        public static final int boyoButton=0x7f080000;
-        public static final int findNameEditText=0x7f080002;
-        public static final int phoneEditText=0x7f080001;
+        public static final int action_settings=0x7f080007;
+        public static final int boyoButton=0x7f080004;
+        public static final int boyoButton2=0x7f080001;
+        public static final int findNameEditText=0x7f080006;
+        public static final int findNameEditText2=0x7f080003;
+        public static final int phoneEditText=0x7f080005;
+        public static final int phoneEditText2=0x7f080002;
+        public static final int realtabcontent=0x7f080000;
     }
     public static final class layout {
-        public static final int boyu_activity_main=0x7f030000;
+        public static final int boyu_main_fragment=0x7f030000;
+        public static final int boyu_search_name_fragment=0x7f030001;
+        public static final int boyu_search_phone_fragment=0x7f030002;
     }
     public static final class menu {
         public static final int main=0x7f070000;
