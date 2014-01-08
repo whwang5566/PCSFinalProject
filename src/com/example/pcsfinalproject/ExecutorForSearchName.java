@@ -81,16 +81,21 @@ public class ExecutorForSearchName implements Executor{
 				//receive number
 				String name="";
 				String phone="";
+				
 				if(user_json!=null)
 				{
 					//get send data
 					try {
 						name = user_json.get("name").toString();
 						phone = user_json.get("phone").toString();
+						
+						//save in DB
+						SearchHistorySQLiteHelper.getInstance(activity).addItem(name, phone);
 					} catch (JSONException e1) {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
 					}
+					
 				}
 				
 				
@@ -119,8 +124,8 @@ public class ExecutorForSearchName implements Executor{
 	    JSONObject result = new JSONObject();
 	    
 	    //answer
-	    String answerName="";
-	    String answerPhoneNumber="";
+	    String answerName="查無此人";
+	    String answerPhoneNumber=""+findNumber;
 	   
 	    while (phones.moveToNext())
 	    {
@@ -149,7 +154,6 @@ public class ExecutorForSearchName implements Executor{
 	    phones.close();
 	    
 	   
-	    	
 	    try {
 	    	result.put("phone", answerPhoneNumber);
 	    	result.put("name", answerName);

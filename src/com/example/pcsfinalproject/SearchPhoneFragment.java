@@ -28,9 +28,6 @@ public class SearchPhoneFragment extends Fragment {
 	 @Override
 	  public void onAttach(Activity activity) {
 	    super.onAttach(activity);
-
-	    //BoyuMainActivity mainActivity = (BoyuMainActivity)activity;
-	    
 	  }
 
 	  @Override

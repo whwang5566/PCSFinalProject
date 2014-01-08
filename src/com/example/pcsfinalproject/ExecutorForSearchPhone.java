@@ -87,6 +87,10 @@ public class ExecutorForSearchPhone implements Executor{
 					try {
 						name = user_json.get("name").toString();
 						phone = user_json.get("phone").toString();
+						
+						//save in DB
+						SearchHistorySQLiteHelper.getInstance(activity).addItem(name, phone);
+						
 					} catch (JSONException e1) {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
@@ -119,8 +123,8 @@ public class ExecutorForSearchPhone implements Executor{
 	    JSONObject result = new JSONObject();
 	    
 	    //answer
-	    String answerName="";
-	    String answerPhoneNumber="";
+	    String answerName=""+findName;
+	    String answerPhoneNumber="查無此人號碼";
 	    int minValue = Integer.MAX_VALUE;
 	    
 	    while (phones.moveToNext())
@@ -157,27 +161,14 @@ public class ExecutorForSearchPhone implements Executor{
 	             
 	    phones.close();
 	    
-	    //check find or not
-	    if(minValue == Integer.MAX_VALUE)
-	    {
-	    	try {
-	    		result.put("phone", "");
-	    		result.put("name", "查無此人號碼");
-			} catch (JSONException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-	    }
-	    else
-	    {	
-	    	try {
+	    //check find or not  
+	    try {
 	    		result.put("phone", answerPhoneNumber);
 	    		result.put("name", answerName);
-			} catch (JSONException e) {
+		} catch (JSONException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-			}
-	    }
+		}
 	    
 	    return result;
 	}

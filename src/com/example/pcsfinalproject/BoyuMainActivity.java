@@ -64,6 +64,12 @@ public class BoyuMainActivity extends FragmentActivity {
                        SearchNameFragment.class, 
                        null);
         
+      //fragment 3
+       tabHost.addTab(tabHost.newTabSpec("Search History")
+                              .setIndicator("Search History"), 
+                       SearchHistoryFragment.class, 
+                       null);
+        
         
     }
     
